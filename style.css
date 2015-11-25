@@ -1,0 +1,15 @@
+/*main button styles*/
+#buttons{position: absolute; bottom: 0px; right:20px; text-align: center;width:48px;}
+.button, .button-main{text-align:center;vertical-align:middle;width:36px;height:36px;display:table;color:#fff; -webkit-border-radius: 50%; -moz-border-radius: 50%;  border-radius: 50%;box-shadow:1px 2px 6px rgba(0,0,0,.8);margin:auto;margin-bottom:20px;}
+.button:hover, .button-main:hover{box-shadow:1px 2px 6px rgba(0,0,0,.4);cursor:pointer;}
+.button-main{width:48px;height:48px;}
+.button-main a{text-decoration:none;color:#fff;display:table-cell;vertical-align:middle;}
+.icon{display:table-cell;vertical-align:middle;align:center;}
+
+/*individual button styles*/
+#plus {background: #db4426;}
+#invite{background:#cea700;}
+#remind{background:#337aff;}
+#E{background:#8da3b2;}
+#S{background:#4bb2ac;}
+.letters{font-size:22px;font-family: 'Lato', sans-serif;text-transform:uppercase;opacity: .8;}
