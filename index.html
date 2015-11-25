@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Inbox Copy Test</title>
+ <meta charset="utf-8">
+ <!--fonts-->
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<!--styles-->
+<link rel="stylesheet" href="style.css" />
+<!--jquery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!--jquery functions-->
+<script>
+$(document).ready(function(){
+//set initial variables
+var icons = $('#hs').children();
+var plus = $("#plus");
+$(icons).hide();
+$(icons).height(0);
+$(icons).width(0);
+
+//Mouseenter function
+    $("#plus").mouseenter(function(){
+        $(icons).each(function(index){
+        //fade
+        $(this).delay(20*index).fadeIn(20);
+        //grow
+         $(this).animate( {
+         height: "36px",
+         width: "36px"},100); 
+        });
+        //rotate
+        $({deg: 0}).animate({deg: 30}, {
+        duration: 100,
+        step: function(now){
+            plus.css({
+                 transform: "rotate(" + now + "deg)"
+            });
+        }
+    });
+    //swap icons
+     $(".icon-plus").addClass('icon-pencil').removeClass('icon-plus');
+});    
+
+//Mouseleave function
+$("#buttons").mouseleave(function(){
+         $(icons).each(function(index){
+         //fade
+        $(this).delay(100*index).fadeOut(100);
+        //shrink
+         $(this).animate( {
+         height: "0px",
+         width: "0px"},100); 
+        });
+        //rotate
+        $({deg: 0}).animate({deg: 0}, {
+        duration: 100,
+        step: function(now){
+            plus.css({
+                 transform: "rotate(" + now + "deg)"
+            });
+        }
+    });
+    //swap icons
+     $(".icon-pencil").addClass('icon-plus').removeClass('icon-pencil');
+    });
+});
+</script>
+</head>
+<body>
+<!--main content container-->
+  <div id="container">
+  <!--buttons container-->
+        <div id="buttons">
+        <!-- hide/show elements -->
+        <div id="hs">
+        <div id="S" class="button"><div class="icon letters">S</div></div>
+        <div id="E" class="button"><div class="icon letters">E</div></div>
+        <div id="remind" class="button"><i class="icon icon-bell icon-large"></i></div>
+        <div id="invite" class="button"><i class="icon icon-ticket icon-large"></i></div>
+        </div>
+        <!--end hide/show-->
+        <!--main plus button-->
+        <div id="plus" class="button-main"><i class="icon icon-plus icon-large"></i></div>
+        </div>
+        <!--end button container-->
+        </div>
+        <!--end main content container-->
+</body>
+</html>
